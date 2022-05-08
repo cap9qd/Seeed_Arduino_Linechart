@@ -61,6 +61,8 @@ public:
                 }
             }
         }
+        if (min_value >= max_value)
+            max_value = min_value + (min_value * 0.1);
     }
 };
 
