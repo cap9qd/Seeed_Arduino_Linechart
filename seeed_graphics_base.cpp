@@ -13,7 +13,7 @@ std::vector<color_t> classic_colors{
 
 constexpr double pi = 3.14159265358979323846;
 
-namespace detail
+namespace detailSGB
 {
     void draw(void *poly, bool gen, TFT_eSPI *canvans)
     {
