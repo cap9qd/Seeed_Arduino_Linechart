@@ -107,7 +107,7 @@ struct_type(point p) :                                    \
 }                                                         \
 
 
-namespace detail {
+namespace detailSGB {
     template<class return_type>
     struct poly{
         poly(){
@@ -208,7 +208,7 @@ struct line{
 };
 
 struct rectangle;
-struct rectangle : detail::aligner<rectangle>{
+struct rectangle : detailSGB::aligner<rectangle>{
     xpositionx(
         rectangle, xlist(pix_t width, pix_t height), {
             _width = width;
@@ -271,9 +271,9 @@ struct dash_line {
 };
 
 struct ellipse;
-struct ellipse : detail::aligner<ellipse> {
+struct ellipse : detailSGB::aligner<ellipse> {
     ellipse() : 
-        detail::aligner<ellipse>(){
+        detailSGB::aligner<ellipse>(){
         _color = pan_color;
         _fill = transparent;
         _thickness = pan_thickness;
@@ -342,7 +342,7 @@ protected:
 };
 
 struct text;
-struct text : detail::aligner<text>{
+struct text : detailSGB::aligner<text>{
     xpositionx(text,
         text_t value, {
             _value = value;
@@ -395,10 +395,10 @@ public:
 };
 
 struct polyline;
-struct polyline : detail::poly<polyline>{
+struct polyline : detailSGB::poly<polyline>{
     polyline(){}
     polyline(std::initializer_list<point> data) : 
-        detail::poly<polyline>(data){
+        detailSGB::poly<polyline>(data){
     }
     void draw(TFT_eSPI *canvans);
     operator can_drawable() {
@@ -407,10 +407,10 @@ struct polyline : detail::poly<polyline>{
 };
 
 struct polygen;
-struct polygen : detail::poly<polygen>{
+struct polygen : detailSGB::poly<polygen>{
     polygen() {}
     polygen(std::initializer_list<point> data) :
-        detail::poly<polygen>(data) {
+        detailSGB::poly<polygen>(data) {
     }
     void draw(TFT_eSPI *canvans);
     operator can_drawable() {

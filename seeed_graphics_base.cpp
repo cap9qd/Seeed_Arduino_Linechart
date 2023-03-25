@@ -17,7 +17,7 @@ namespace detail
 {
     void draw(void *poly, bool gen, TFT_eSPI *canvans)
     {
-        detail::poly<polygen> &p = *(detail::poly<polygen> *)poly;
+        detailSGB::poly<polygen> &p = *(detailSGB::poly<polygen> *)poly;
         auto default_color = black;
         auto default_thickness = pan_thickness;
         auto &value = p.value();
@@ -182,9 +182,9 @@ void text::draw(TFT_eSPI *canvans)
 }
 void polyline::draw(TFT_eSPI *canvans)
 {
-    detail::draw(this, false, canvans);
+    detailSGB::draw(this, false, canvans);
 }
 void polygen::draw(TFT_eSPI *canvans)
 {
-    detail::draw(this, true, canvans);
+    detailSGB::draw(this, true, canvans);
 }
